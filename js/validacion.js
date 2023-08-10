@@ -13,7 +13,7 @@ function validarfor(){
     var data = document.getElementsByClassName("form-control");
     
 
-    for (var i=0; i< data.lenght; i++){
+    for (var i=0; i< data.length; i++){
         if (data [i].value === " "){showAlertError() 
             return false}
     }
@@ -21,12 +21,25 @@ function validarfor(){
     var contraseña = document.getElementById("password1")
     var contraseña2 = document.getElementById("password2")
 
- if(contraseña.value.lenght < 6){
+ if(contraseña.value.length < 6){
    showAlertError();
    return false
  }
 
- if(contraseña2.value.lenght < 6){
+ if(contraseña2.value.length < 6){
+    showAlertError()
+    return false
+ }
+
+
+ if(contraseña.value !== contraseña2.value){
+    showAlertError()
+    return false
+ }
+
+ var checkbox = document.getElementById("terminos").checked
+
+ if(!checkbox){
     showAlertError()
     return false
  }
